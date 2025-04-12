@@ -1,0 +1,19 @@
+{
+  "name": "testproject",
+  "version": "1.0.0",
+  "description": "This is a test project",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel serve --open",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "Christopher Pena",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
