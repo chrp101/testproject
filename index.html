@@ -5,35 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Test Project</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .header-rocket {
+      font-size: 3rem;
+    }
+  </style>
 </head>
+<body class="container py-5">
 
-<body class="bg-light text-dark">
-  <main class="container py-5">
-    <div class="text-center">
-      <h1 class="display-4 fw-bold">🚀 Test Project</h1>
-      <h2>This change is testing auto-deploy from GitHub Actions ✅</h2>
-      <p class="lead">A sandbox to practice Bootstrap + Firebase deployments</p>
-    </div>
-
-    <div class="mt-5">
-      <ol class="list-group list-group-numbered shadow-sm">
-        <li class="list-group-item">Set up the project folder and installed the initial packages</li>
-        <li class="list-group-item">Initialized Git</li>
-        <li class="list-group-item">Initialized Firebase</li>
-        <li class="list-group-item">Added some HTML code</li>
-        <li class="list-group-item">Linked the Bootstrap files</li>
-        <li class="list-group-item">Served and tested the project locally</li>
-        <li class="list-group-item">Packaged the project for deployment</li>
-        <li class="list-group-item">Deployed to Firebase</li>
-      </ol>
-    </div>
-
-    <p class="mt-5 text-muted text-center">
-      You can re-build and re-deploy changes at any time with
-      <code>npm run build</code> + <code>firebase deploy</code>
+  <div class="text-center mb-5">
+    <h1 class="header-rocket">🚀 Test Project</h1>
+    <p class="lead fw-bold">
+      This change is testing auto-deploy from GitHub Actions ✅
     </p>
-  </main>
+    <p class="text-muted">A sandbox to practice Bootstrap + Firebase deployments</p>
+    <a href="about.html" class="btn btn-outline-secondary">About Page</a>
+  </div>
+
+  <div class="card mb-4">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">1. Set up the project folder and installed the initial packages</li>
+      <li class="list-group-item">2. Initialized Git</li>
+      <li class="list-group-item">3. Initialized Firebase</li>
+      <li class="list-group-item">4. Added some HTML code</li>
+      <li class="list-group-item">5. Linked the Bootstrap files</li>
+      <li class="list-group-item">6. Served and tested the project locally</li>
+      <li class="list-group-item">7. Packaged the project for deployment</li>
+      <li class="list-group-item">8. Deployed to Firebase</li>
+    </ul>
+  </div>
+
+  <div id="quoteBox" class="alert alert-info text-center">
+    Loading a random quote...
+  </div>
+
+  <hr class="my-5" />
+
+  <div class="mb-5">
+    <h2 class="h4 mb-3">📬 Contact Form</h2>
+    <form action="https://formspree.io/f/mayzvljl" method="POST">
+      <div class="mb-3">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+      </div>
+      <div class="mb-3">
+        <input type="email" name="email" class="form-control" placeholder="Email" required />
+      </div>
+      <div class="mb-3">
+        <textarea name="message" class="form-control" placeholder="Message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Send Message</button>
+    </form>
+  </div>
+
+  <p class="text-center text-muted mt-5">
+    You can re-build and re-deploy changes at any time with 
+    <code>npm run build + firebase deploy</code>
+  </p>
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Fetch a random quote and insert into #quoteBox
+    fetch('https://api.quotable.io/random')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('quoteBox').textContent =
+          `"${data.content}" — ${data.author}`;
+      })
+      .catch(() => {
+        document.getElementById('quoteBox').textContent =
+          "Could not load quote. Please try again later.";
+      });
+  </script>
 </body>
 </html>
