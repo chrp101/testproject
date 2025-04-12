@@ -11,7 +11,7 @@
   "author": "Christopher Pena",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.14.4"
+    "parcel": "^2.11.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.2"
