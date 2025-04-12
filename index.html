@@ -6,26 +6,33 @@
   <title>Test Project</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 </head>
-<body>
-  <main class="container">
-    <h1>Test Project</h1>
-    <p>This is a simple test project to demonstrate how easy it is to set up a new project. 
-    In this exercise, we completed the following tasks:</p>
-    <ol>
-      <li>Set up the project folder and installed the initial packages</li>
-      <li>Initialized Git</li>
-      <li>Initialized Firebase</li>
-      <li>Added some HTML code</li>
-      <li>Linked the Bootstrap files</li>
-      <li>Served and tested the project locally</li>
-      <li>Packaged the project for deployment</li>
-      <li>Deployed to Firebase</li>
-    </ol>
-    <p>Later, I might decide to come back here and play around with this file some more, to test out some things. 
-    It's sort of like a code sandbox that I can use to practice Bootstrap components, styles, and more. 
-    If I want to change anything in this project, I just need to re-build and re-deploy my changes. It's that easy!</p>
+
+<body class="bg-light text-dark">
+  <main class="container py-5">
+    <div class="text-center">
+      <h1 class="display-4 fw-bold">🚀 Test Project</h1>
+      <p class="lead">A sandbox to practice Bootstrap + Firebase deployments</p>
+    </div>
+
+    <div class="mt-5">
+      <ol class="list-group list-group-numbered shadow-sm">
+        <li class="list-group-item">Set up the project folder and installed the initial packages</li>
+        <li class="list-group-item">Initialized Git</li>
+        <li class="list-group-item">Initialized Firebase</li>
+        <li class="list-group-item">Added some HTML code</li>
+        <li class="list-group-item">Linked the Bootstrap files</li>
+        <li class="list-group-item">Served and tested the project locally</li>
+        <li class="list-group-item">Packaged the project for deployment</li>
+        <li class="list-group-item">Deployed to Firebase</li>
+      </ol>
+    </div>
+
+    <p class="mt-5 text-muted text-center">
+      You can re-build and re-deploy changes at any time with
+      <code>npm run build</code> + <code>firebase deploy</code>
+    </p>
   </main>
-  
+
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
